@@ -78,6 +78,14 @@ cd F:\source1\so101-dataset-peek
 .\.venv\Scripts\python.exe .\peek_dataset.py
 ```
 
+任意の episode / frame と動画フレームの対応を見る。
+
+```powershell
+.\.venv\Scripts\python.exe .\show_batch.py
+```
+
+`show_batch.py` は `EPISODE_INDEX` と `FRAME_INDEX` を変更して使う。実行すると、指定frameの `observation.state` / `action` / 差分を表示し、同じframeの laptop / phone 画像を `out/` に保存する。
+
 ## Example Output
 
 ```text
@@ -113,6 +121,5 @@ cd F:\source1\so101-dataset-peek
 
 ## Next
 
-- 任意 episode / frame を選んで表示する
-- `observation.images.laptop` / `observation.images.phone` の動画と parquet のフレーム対応を見る
+- `show_batch.py` の episode / frame 指定を引数化するか判断する
 - ACT入力へ渡す前提の shape 表を作る
