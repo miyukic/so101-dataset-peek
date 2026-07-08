@@ -54,7 +54,8 @@ camera image + observation.state -> action
 ## Setup
 
 ```powershell
-cd F:\source1\so101-dataset-peek
+git clone https://github.com/miyukic/so101-dataset-peek.git
+cd so101-dataset-peek
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
@@ -62,7 +63,7 @@ python -m venv .venv
 データセット本体はGitHubには含めない。ローカルでは以下に置く想定。
 
 ```text
-F:\source1\so101-dataset-peek\data\orsoromeo_so101_pick_and_place
+.\data\orsoromeo_so101_pick_and_place
 ```
 
 取得例:
@@ -74,7 +75,6 @@ F:\source1\so101-dataset-peek\data\orsoromeo_so101_pick_and_place
 ## Run
 
 ```powershell
-cd F:\source1\so101-dataset-peek
 .\.venv\Scripts\python.exe .\peek_dataset.py
 ```
 
