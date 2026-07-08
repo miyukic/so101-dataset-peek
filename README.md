@@ -92,6 +92,12 @@ ACTへ渡す前提のshapeを見る。
 .\.venv\Scripts\python.exe .\check_act_shapes.py
 ```
 
+ACTの action chunk の形を見る。
+
+```powershell
+.\.venv\Scripts\python.exe .\show_action_chunk.py
+```
+
 ## Example Output
 
 ```text
@@ -128,4 +134,4 @@ ACTへ渡す前提のshapeを見る。
 ## Next
 
 - `show_batch.py` の episode / frame 指定を引数化するか判断する
-- ACTのaction chunkでは、1行の `action` をどう未来方向に束ねるかを見る
+- 画像と action chunk を同じframe基準で並べる
