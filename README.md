@@ -86,6 +86,12 @@ cd F:\source1\so101-dataset-peek
 
 `show_batch.py` は `EPISODE_INDEX` と `FRAME_INDEX` を変更して使う。実行すると、指定frameの `observation.state` / `action` / 差分を表示し、同じframeの laptop / phone 画像を `out/` に保存する。
 
+ACTへ渡す前提のshapeを見る。
+
+```powershell
+.\.venv\Scripts\python.exe .\check_act_shapes.py
+```
+
 ## Example Output
 
 ```text
@@ -122,4 +128,4 @@ cd F:\source1\so101-dataset-peek
 ## Next
 
 - `show_batch.py` の episode / frame 指定を引数化するか判断する
-- ACT入力へ渡す前提の shape 表を作る
+- ACTのaction chunkでは、1行の `action` をどう未来方向に束ねるかを見る
