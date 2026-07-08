@@ -1,0 +1,6 @@
+pandas
+pyarrow
+huggingface_hub
+numpy
+matplotlib
+imageio[ffmpeg]
