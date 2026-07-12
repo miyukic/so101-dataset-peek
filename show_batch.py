@@ -1,6 +1,7 @@
 # coding: UTF-8
 import pandas as pd
 import imageio
+import traceback
 from pathlib import Path
 
 EPISODE_INDEX = 0
@@ -32,16 +33,20 @@ def VideoPathPhone():
 
 
 def saveImageByVideoFrame(frame, videoPath, cameraName):
-    print(f" === Save Image by frame {frame} frame ===")
+    print(f" === Save {cameraName} Image from {frame} frame ===")
     print(f"Video Path = {videoPath}")
     vid = imageio.get_reader(videoPath, 'ffmpeg')
     img = vid.get_data(frame)
     vid.close()
     Path(VIDEO_OUTPUT_PATH).mkdir(exist_ok=True)
     fn = Path(VIDEO_OUTPUT_PATH) / f'{episodeName()}_frame_{FRAME_INDEX:06d}_{cameraName}.png'
+    try:
+        imageio.imwrite(fn, img)
+    except:
+        traceback.print_exc()
+        return
+    print(f"{frame} フレーム目の {cameraName} カメラ動画の場面(画像)を\n{fn}に保存しました。")
 
-    imageio.imwrite(fn, img)
-    print(" === Save Image Done ===")
 
 
 def getParquetDelta(frame):
